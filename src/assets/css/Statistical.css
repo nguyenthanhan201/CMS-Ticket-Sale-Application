@@ -1,0 +1,128 @@
+.wrapper-pie-chart {
+  max-width: 320px;
+  /* display: contents; */
+  min-width: 320px;
+  /* display: flex; */
+}
+.wrapper-pie-chart canvas {
+  width: 100%;
+  height: 100%;
+}
+.statistical {
+  position: relative;
+  width: calc(100% - 300px);
+  left: 300px;
+}
+.statistical-content {
+  padding: 24px;
+  margin-top: 20px;
+  border-radius: 24px;
+
+  background: white;
+}
+.statistical-content h1 {
+  font-size: 36px;
+}
+.line-chart h4 {
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 600;
+}
+.line-chart .top-line-chart {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.line-chart .top-line-chart button {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid #e6e0e0;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+  font-size: 14px;
+  color: rgba(30, 13, 3, 1);
+  background: rgba(255, 255, 255, 1);
+}
+.line-chart .top-line-chart button span i {
+  margin-left: 10px;
+
+  color: rgba(255, 153, 60, 1);
+  font-size: 24px;
+}
+.top-pie-chart {
+  margin-bottom: 83px;
+}
+.top-pie-chart p {
+  margin: 35px 0 8px 0;
+
+  font-size: 14px;
+  color: #1e0d03;
+  opacity: 0.5;
+}
+.top-pie-chart h1 {
+  display: initial;
+  margin: 0;
+  margin-right: 4px;
+
+  font-size: 24px;
+  color: #1e0d03;
+}
+.top-pie-chart span {
+  font-size: 14px;
+  color: #1e0d03;
+  font-style: normal;
+  font-weight: 500;
+}
+.content-pie-chart {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.content-pie-chart button {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid #e6e0e0;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+  font-size: 14px;
+  color: rgba(30, 13, 3, 1);
+  background: rgba(255, 255, 255, 1);
+}
+.content-pie-chart button span i {
+  margin-left: 10px;
+
+  color: rgba(255, 153, 60, 1);
+  font-size: 24px;
+}
+.pie-chart-infor .item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.pie-chart-infor .item p {
+  margin: 0;
+}
+.pie-chart-infor .item .rectangle {
+  width: 44px;
+  height: 20px;
+  border-radius: 4px;
+  margin-right: 8px;
+
+  background: #4f75ff;
+}
+.pie-chart-infor .item:nth-child(2) .rectangle {
+  background: #ff8a48;
+}
+/* custom calender */
+.calender {
+  display: none;
+}
+.calender.active {
+  display: block;
+}
