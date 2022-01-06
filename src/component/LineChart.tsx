@@ -20,8 +20,6 @@ ChartJS.register(
   Legend
 );
 
-const labels = ["Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "CN"];
-
 const options: any = {
   plugins: {
     legend: { display: false },
@@ -44,6 +42,7 @@ const options: any = {
         },
       },
       grid: {
+        drawBorder: false,
         color: "#ece9f1",
       },
     },
@@ -56,7 +55,9 @@ const options: any = {
         align: "start",
       },
       grid: {
-        color: "white",
+        drawBorder: false,
+        display: false,
+        color: "#ece9f1",
       },
     },
   },
@@ -76,18 +77,18 @@ const options: any = {
   },
 };
 
-const data = {
-  labels,
+const data: any = {
+  type: "line",
+  labels: ["Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "CN"],
   datasets: [
     {
       data: [143, 175, 180, 230, 215, 210, 182],
-      label: "An",
-      fill: true,
-      backgroundColor: "rgba(0, 0, 0, 0.1)",
+      backgroundColor: "rgba(255,0,255,0.75)",
       tension: 0.8,
       pointRadius: 1,
       borderColor: "#fe9d44",
       lineTension: 0.3,
+      fill: true,
     },
   ],
 };

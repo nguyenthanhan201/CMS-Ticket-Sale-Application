@@ -1,0 +1,126 @@
+button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  padding-right: 35px;
+  margin-left: auto;
+  border: 1px solid #e6e0e0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  font-size: 14px;
+  color: rgba(30, 13, 3, 1);
+  background: rgba(255, 255, 255, 1);
+}
+.date-picker button::after {
+  position: absolute;
+  content: "\f133";
+
+  color: rgba(255, 153, 60, 1);
+  font-family: FontAwesome;
+  font-size: 21px;
+  right: 12px;
+}
+span i {
+  margin-left: 10px;
+
+  color: rgba(255, 153, 60, 1);
+  font-size: 24px;
+}
+.date-picker {
+  position: relative;
+}
+
+.date-picker .list-radio {
+  display: flex;
+  justify-content: space-between;
+}
+
+.date-picker .list-radio .radio span {
+  margin-left: 8px;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.015em;
+}
+
+.date-picker .dates {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  padding: 24px 32px;
+
+  background: #ffffff;
+  box-shadow: 4px 4px 45px rgba(109, 46, 0, 0.35);
+  border-radius: 20px;
+}
+
+.date-picker .dates.active {
+  display: block;
+}
+
+.date-picker .dates .month {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 182px;
+  margin-bottom: 16px;
+
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.date-picker .dates .month .arrows {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #313131;
+  font-size: 20px;
+}
+
+.date-picker .dates .month .arrows:hover {
+  cursor: pointer;
+}
+
+.date-picker .dates .days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+.date-picker .dates .days .day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #313131;
+  position: relative;
+  width: 32px;
+  height: 32px;
+
+  cursor: pointer;
+}
+.days .day.selected {
+  color: #ffffff !important;
+  background: #FFBA7B;
+  border-radius: 50%;
+}
+
+.top-day {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-right: 7px;
+  gap: 23px;
+
+  color: #c55e00;
+  font-weight: 600;
+  font-size: 18px;
+}
+.top-day p:nth-child(n + 8) {
+  display: none;
+}

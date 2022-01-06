@@ -9,6 +9,7 @@ import {
   Title,
   Tooltip,
 } from "chart.js";
+import ChartDataLabels from "chartjs-plugin-datalabels";
 import { Pie } from "react-chartjs-2";
 
 ChartJS.register(
@@ -19,7 +20,7 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
-  ArcElement
+  ArcElement,
 );
 
 const labels = ["Vé đã sử dùng", "Vé chưa sử dụng"];
@@ -28,19 +29,20 @@ const options: any = {
   plugins: {
     legend: { display: false },
     datalabels: {
+      display: true,
       formatter: (value: any, ctx: any) => {
         let sum = ctx.dataset._meta[0].total;
         let percentage = ((value * 100) / sum).toFixed(2) + "%";
-        console.log(value);
+        // console.log(value);
         return percentage;
       },
       color: "#fff",
     },
     title: {
       display: true,
-      text: "Gói gia đình",
-      color: "#1E0D03",
-      font: { weight: "600" },
+      text: "Gói sự kiện",
+      colo: { weight: "600" },
+      font: "#1E0D03",
       padding: {
         top: 0,
         bottom: 25,
@@ -49,9 +51,8 @@ const options: any = {
   },
   layout: { padding: { bottom: 100 } },
   responsive: true,
+  maintainAspectRatio: true,
 };
-
-// let customLabels = labels.map((label, index) => `${label}: ${data[index]}`);
 
 const data: any = {
   type: "pie",
@@ -115,13 +116,13 @@ const data2: any = {
       color: "black",
     },
   ],
+  plugins: [ChartDataLabels],
 };
 
-export default function PieChart(): JSX.Element {
+export default function PieChart({data_add,option}:any): JSX.Element {
   return (
     <>
-      <Pie data={data} options={options}/>
-      <Pie data={data2} options={options2} />
+      <Pie data={data_add} options={option} />
     </>
   );
 }
