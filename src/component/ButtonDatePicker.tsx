@@ -159,7 +159,7 @@ export default function ButtonDatePicker(): JSX.Element {
 
       return "Tháng " + month + "," + year;
     }
-  },[]);
+  }, []);
   const handleClick = () => {
     document.querySelector(".date-picker .dates")?.classList.toggle("active");
   };
@@ -176,7 +176,7 @@ export default function ButtonDatePicker(): JSX.Element {
         </div>
         <div className="list-radio">
           <div className="radio">
-            <input type="radio" name="radio" defaultChecked/>
+            <input type="radio" name="radio" defaultChecked />
             <span>Theo ngày</span>
           </div>
           <div className="radio">
