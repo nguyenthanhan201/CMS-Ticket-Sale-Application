@@ -6,15 +6,21 @@ body {
   max-width: 1920px;
   max-height: 1080px;
 
-  background: rgba(249, 246, 244, 1);
+  background: #f9f6f4;
   font-family: "Montserrat", sans-serif;
 }
-ul{
+ul {
   padding: 0;
 }
-ul li{
+ul li {
   list-style: none;
 }
-button{
+button {
   font-family: "Montserrat", sans-serif;
 }
+.container {
+  background: #f9f6f4;
+}
+/* svg path{
+  fill: aqua;
+} */

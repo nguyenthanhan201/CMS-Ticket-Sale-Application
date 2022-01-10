@@ -3,7 +3,7 @@ button {
   display: flex;
   align-items: center;
   padding: 8px 12px;
-  padding-right: 35px;
+  /* padding-right: 35px; */
   margin-left: auto;
   border: 1px solid #e6e0e0;
   border-radius: 4px;
@@ -14,7 +14,7 @@ button {
   color: rgba(30, 13, 3, 1);
   background: rgba(255, 255, 255, 1);
 }
-.date-picker button::after {
+/* .date-picker button::after {
   position: absolute;
   content: "\f133";
 
@@ -22,12 +22,12 @@ button {
   font-family: FontAwesome;
   font-size: 21px;
   right: 12px;
-}
-span i {
+} */
+button i {
   margin-left: 10px;
 
   color: rgba(255, 153, 60, 1);
-  font-size: 24px;
+  font-size: 18px;
 }
 .date-picker {
   position: relative;

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import "../assets/css/ButtonDatePicker.css";
+import Button from "./Button";
 
 export default function ButtonDatePicker(): JSX.Element {
   useEffect(() => {
@@ -65,12 +66,14 @@ export default function ButtonDatePicker(): JSX.Element {
     next_mth_element.addEventListener("click", goToNextMonth);
     prev_mth_element.addEventListener("click", goToPrevMonth);
 
+    populateDates();
+
     // FUNCTIONS
-    var stringToHTML = function (str: any) {
-      var parser = new DOMParser();
-      var doc = parser.parseFromString(str, "text/html");
-      return doc.body;
-    };
+    // var stringToHTML = function (str: any) {
+    //   var parser = new DOMParser();
+    //   var doc = parser.parseFromString(str, "text/html");
+    //   return doc.body;
+    // };
 
     function toggleDatePicker(e: any) {
       if (!checkEventPathForClass(e.path, "dates")) {
@@ -165,9 +168,7 @@ export default function ButtonDatePicker(): JSX.Element {
   };
   return (
     <div className="date-picker">
-      <button className="selected-date" onClick={() => handleClick()}></button>
-      <div className="selected-date"></div>
-
+      <Button onClick={() => handleClick()} icon="far fa-calendar"><div className="selected-date"></div></Button>
       <div className="dates">
         <div className="month">
           <div className="arrows prev-mth">&lt;</div>
@@ -176,11 +177,11 @@ export default function ButtonDatePicker(): JSX.Element {
         </div>
         <div className="list-radio">
           <div className="radio">
-            <input type="radio" name="radio" defaultChecked />
+            <input type="radio" name="radio-group" value="1" defaultChecked />
             <span>Theo ngày</span>
           </div>
           <div className="radio">
-            <input type="radio" name="radio" />
+            <input type="radio" name="radio-group" value="2" />
             <span>Theo tuần</span>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import {
   CategoryScale,
   Chart as ChartJS,
+  Filler,
   Legend,
   LinearScale,
   LineElement,
@@ -8,6 +9,8 @@ import {
   Title,
   Tooltip,
 } from "chart.js";
+import { Context } from "chartjs-plugin-datalabels";
+import React from "react";
 import { Line } from "react-chartjs-2";
 
 ChartJS.register(
@@ -17,12 +20,19 @@ ChartJS.register(
   LineElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  Filler
 );
 
 const options: any = {
   plugins: {
     legend: { display: false },
+    datalabels: {
+      rotation: (ctx: Context) => {
+        return ctx.dataIndex % 2 ? 180 : 0;
+      },
+      display: false,
+    },
   },
   scales: {
     y: {
@@ -61,38 +71,46 @@ const options: any = {
       },
     },
   },
-  options: {
-    plugins: {
-      tooltip: {
-        enabled: true,
-      },
-      datalabels: {
-        formatter: (value: any, content: any) => {
-          console.log(value);
-          console.log(content);
-          return value + "tr";
-        },
-      },
-    },
-  },
 };
 
-const data: any = {
+// const canvas = document.getElementById("canvas") as HTMLCanvasElement;
+// const ctx = canvas.getContext("2d");
+// const gradient = ctx?.createLinearGradient(0, 0, 0, 400);
+// gradient?.addColorStop(0, "rgba(229, 239, 255, 1)");
+// gradient?.addColorStop(1, "#FFFFFF");
+
+const data = {
+  // const canvas = document.getElementById("canvas") as HTMLCanvasElement;
+  // const ctx = canvas.getContext("2d");
+
+  // const gradient = ctx?.createLinearGradient(0, 0, 0, 400);
+  // gradient?.addColorStop(0, "rgba(229, 239, 255, 1)");
+  // gradient?.addColorStop(1, "#FFFFFF");
   type: "line",
   labels: ["Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "CN"],
   datasets: [
     {
       data: [143, 175, 180, 230, 215, 210, 182],
-      backgroundColor: "rgba(255,0,255,0.75)",
+      backgroundColor: "rgba(250, 160, 95, 0.26),rgba(255, 255, 255, 0)",
       tension: 0.8,
-      pointRadius: 1,
+      pointRadius: 0.5,
       borderColor: "#fe9d44",
       lineTension: 0.3,
       fill: true,
     },
   ],
 };
+// console.log(data);
+// export default function LineChart() {
+//   return <Line data={data} options={options} />;
+// }
 
-export function LineChart(): JSX.Element {
-  return <Line data={data} options={options} />;
+export default function LineChart() {
+  // const chartRef = React.createRef();
+  // console.log(chartRef);
+  return (
+    <div>
+      <Line id="canvas" data={data} options={options} />
+    </div>
+  );
 }

@@ -1,13 +1,3 @@
-.wrapper-pie-chart {
-  /* max-width: 320px; */
-  /* display: contents; */
-  /* min-width: 320px; */
-  /* display: flex; */
-}
-/* .wrapper-pie-chart canvas {
-  width: 100%;
-  height: 100%;
-} */
 .statistical {
   position: relative;
   width: calc(100% - 300px);
@@ -59,18 +49,23 @@
   font-style: normal;
   font-weight: 500;
 }
-.content-pie-chart {
-  /* display: flex;
-  align-items: flex-start;
-  justify-content: center; */
-  display: grid;
-  /* grid-template-columns: 150px 300px 300px 300px; */
-  grid-template-columns: 0fr 1fr 1fr 1fr;
+.wrapper-pie-chart{
+  width: 100%;
+  height: 100%;
+  max-width: 300px;
 }
-/* .content-pie-chart canvas{
+.content-pie-chart {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* grid-template-columns: 150px 300px 300px 300px; */
+  /* grid-template-columns: repeat(4, 150px); */
+  /* grid-template-columns: auto auto auto auto; */
+}
+.content-pie-chart canvas{
   width: 100% !important;
   height: 100% !important;
-} */
+}
 .content-pie-chart button {
   display: flex;
   align-items: center;
@@ -116,3 +111,10 @@
 .calender.active {
   display: block;
 }
+/* 
+@media screen and (max-width: 1024px) {
+  .content-pie-chart{
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20px;
+  }
+} */

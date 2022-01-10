@@ -3,10 +3,13 @@ header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  position: relative;
+  width: calc(100% - 300px);
+  left: 300px;
 }
-.header-left form{
+.header-left form {
   border-radius: 12px;
-  padding-right:10px ;
+  padding-right: 10px;
 
   background: rgba(237, 230, 230, 1);
 }
@@ -39,8 +42,10 @@ header {
 .header-right ul li i {
   width: 24px;
   height: 24px;
+
+  color: #756a64;
 }
-.header-right ul li img{
+.header-right ul li img {
   width: 48px;
   height: 48px;
 }

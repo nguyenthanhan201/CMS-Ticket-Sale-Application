@@ -1,0 +1,12 @@
+.setting {
+  position: relative;
+  width: calc(100% - 300px);
+  left: 300px;
+}
+.setting-content {
+  padding: 24px;
+  margin-top: 20px;
+  border-radius: 24px;
+
+  background: white;
+}

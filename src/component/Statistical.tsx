@@ -1,9 +1,9 @@
+import React from "react";
 import "../assets/css/Statistical.css";
-import Button1 from "./Button1";
 import ButtonDatePicker from "./ButtonDatePicker";
-import Header from "./Header";
-import { LineChart } from "./LineChart";
+import LineChart from "./LineChart";
 import PieChart from "./PieChart";
+// import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 export default function Statistical(): JSX.Element {
   const labels = ["Vé đã sử dùng", "Vé chưa sử dụng"];
@@ -12,29 +12,51 @@ export default function Statistical(): JSX.Element {
     plugins: {
       legend: { display: false },
       datalabels: {
-        display: true,
-        formatter: (value: any, ctx: any) => {
-          let sum = ctx.dataset._meta[0].total;
-          let percentage = ((value * 100) / sum).toFixed(2) + "%";
-          // console.log(value);
-          return percentage;
+        color: "#1E0D03",
+        anchor: "end",
+        align: "start",
+        offset: -45,
+        borderWidth: 2,
+        borderColor: "white",
+        borderRadius: 12,
+        backgroundColor: "#ffffff",
+        font: {
+          size: "14",
+          font: "Montserrat",
         },
-        color: "#fff",
+        padding: 12,
+        hoverInnerGlowWidth: 20,
+        hoverInnerGlowColor: "rgba(146,151,164,.5)",
+        hoverOuterGlowWidth: 20,
+        hoverOuterGlowColor: "rgba(127,133,151,1)",
       },
       title: {
         display: true,
         text: "Gói sự kiện",
         color: "#1E0D03",
-        font: { weight: "600" },
+        font: { weight: "600", size: "18" },
         padding: {
           top: 0,
           bottom: 25,
         },
       },
+      // onHover: function (evt: any, elements: any) {
+      //   if (elements && elements.length) {
+      //     const segment = elements[0];
+      //     this.chart.update();
+      //     const selectedIndex = segment["_index"];
+      //     segment._model.outerRadius += 5;
+      //   } else {
+      //     if (segment) {
+      //       segment._model.outerRadius -= 5;
+      //     }
+      //     const segment = null;
+      //   }
+      // },
     },
-    layout: { padding: { bottom: 100 } },
+    // layout: { padding: { bottom: 100 } },
     responsive: true,
-    maintainAspectRatio: true,
+    // maintainAspectRatio: true,
   };
 
   const data: any = {
@@ -42,6 +64,7 @@ export default function Statistical(): JSX.Element {
     labels,
     datasets: [
       {
+        // plugins: [ChartDataLabels],
         data: [13568, 56024],
         backgroundColor: ["rgba(255, 138, 72, 1)", "rgba(79, 117, 255, 1)"],
         borderColor: ["rgba(255, 138, 72, 1)", "rgba(79, 117, 255, 1)"],
@@ -53,33 +76,42 @@ export default function Statistical(): JSX.Element {
         color: "black",
       },
     ],
+    shadowOffsetX: 5,
+    shadowOffsetY: 5,
+    shadowBlur: [5, 10, 15, 20, 25, 30, 0],
+    // shadowColor: effectColors.shadows,
   };
 
   const options2: any = {
     plugins: {
       legend: { display: false },
       datalabels: {
-        display: true,
-        formatter: (value: any, ctx: any) => {
-          let sum = ctx.dataset._meta[0].total;
-          let percentage = ((value * 100) / sum).toFixed(2) + "%";
-          console.log(value);
-          return percentage;
+        color: "#1E0D03",
+        anchor: "end",
+        align: "start",
+        offset: -45,
+        borderWidth: 2,
+        borderColor: "white",
+        borderRadius: 12,
+        backgroundColor: "#ffffff",
+        font: {
+          size: "14",
+          font: "Montserrat",
         },
-        color: "#fff",
+        padding: 12,
       },
       title: {
         display: true,
         text: "Gói gia đình",
         color: "#1E0D03",
-        font: { weight: "600" },
+        font: { weight: "600", size: "18" },
         padding: {
           top: 0,
           bottom: 25,
         },
       },
     },
-    layout: { padding: { bottom: 100 } },
+    // layout: { padding: { bottom: 100 } },
     responsive: true,
   };
 
@@ -100,9 +132,9 @@ export default function Statistical(): JSX.Element {
       },
     ],
   };
+
   return (
     <div className="statistical">
-      <Header />
       <div className="statistical-content">
         <h1>Thống kê</h1>
         <div className="line-chart">
@@ -119,7 +151,7 @@ export default function Statistical(): JSX.Element {
             <span>đồng</span>
           </div>
           <div className="content-pie-chart">
-            <Button1 />
+            {/* <ButtonDatePicker /> */}
             <div className="wrapper-pie-chart">
               <PieChart data_add={data} option={options} />
             </div>
