@@ -22,16 +22,23 @@
   display: flex;
   gap: 10px;
 }
+.btn-filter span{
+  display: flex;
+  align-items: center;
+}
+.btn-filter span svg{
+  margin-right: 8px;
+}
 .btn-control i {
   margin: 0 10px 0 0;
 }
 .btn-control span {
   order: 2;
 }
-.btn-control {
+.btn-control,.btn-filter {
   margin-left: 10px;
   border: 1px solid #ff993c;
-  padding: 11px 24px;
+  padding: 10px 16px;
 
   color: #ff993c;
   font-weight: bold;

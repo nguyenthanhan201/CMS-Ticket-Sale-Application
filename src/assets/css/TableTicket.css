@@ -1,0 +1,76 @@
+.ant-table-thead
+  > tr
+  > th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+  position: relative;
+}
+.ant-table-thead {
+  background: #f1f4f8 !important;
+  border-radius: 8px 8px 0px 0px;
+}
+.ant-table-thead .ant-table-cell {
+  background: #f1f4f8 !important;
+}
+.ant-table-thead > tr > th {
+  color: #1e0d03;
+  font-size: 16px;
+  font-weight: 600;
+  opacity: 1;
+}
+.ant-table-tbody > tr > td {
+  border: 0;
+}
+.ant-table-cell,
+.ant-table-cell a {
+  color: #5f534e;
+  font-size: 14px;
+  font-weight: 500;
+}
+.ant-table-tbody tr:nth-child(even),
+.ant-table-tbody tr:nth-child(even) .ant-table-cell.ant-table-cell-fix-left {
+  background: #f7f8fb !important;
+}
+/* css state of sticket */
+.ant-tag.ant-tag-volcano svg circle {
+  fill: #d4380d;
+}
+.ant-tag {
+  padding: 3px 12px;
+  border-radius: 4px;
+}
+.ant-tag svg {
+  margin-right: 8px;
+}
+.ant-tag.ant-tag-geekblue {
+  color: #919dba;
+}
+.ant-tag.ant-tag-geekblue svg circle {
+  fill: #919dba;
+}
+/* css button pagination */
+.ant-pagination-disabled .ant-pagination-item-link,
+.ant-pagination-disabled:hover .ant-pagination-item-link,
+.ant-pagination-disabled:focus-visible .ant-pagination-item-link,
+.ant-pagination-item {
+  border-color: #fff;
+}
+.ant-pagination-item {
+  color: #1e0d03;
+  font-size: 14px;
+}
+.ant-pagination-item-active {
+  border: 1px solid #ff993c;
+}
+.ant-pagination-item-active a {
+  color: #ff993c;
+}
+.ant-pagination-next .ant-pagination-item-link,
+.ant-pagination-prev .ant-pagination-item-link {
+  border-color: #fff;
+}
+.ant-pagination-next .ant-pagination-item-link svg path,
+.ant-pagination-prev .ant-pagination-item-link svg path {
+  fill: #ff993c;
+}
+.ant-pagination-disabled svg path {
+  fill: black !important;
+}
