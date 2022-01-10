@@ -67,10 +67,14 @@
 .ant-pagination-prev .ant-pagination-item-link {
   border-color: #fff;
 }
-.ant-pagination-next .ant-pagination-item-link svg path,
-.ant-pagination-prev .ant-pagination-item-link svg path {
+.ant-pagination-next svg path,
+.ant-pagination-prev svg path {
   fill: #ff993c;
 }
 .ant-pagination-disabled svg path {
-  fill: black !important;
+  fill: #A5A8B1 !important;
+}
+.ant-pagination-prev button, .ant-pagination-next button{
+  height: 100%;
+  border-color: #fff;
 }
