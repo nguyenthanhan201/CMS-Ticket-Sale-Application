@@ -35,12 +35,13 @@
   color: #1e0d03;
   opacity: 0.5;
 }
-.top-pie-chart h1 {
+.top-pie-chart-title{
   display: initial;
   margin: 0;
   margin-right: 4px;
 
-  font-size: 24px;
+  font-size: 24px!important;
+  font-weight: 700;
   color: #1e0d03;
 }
 .top-pie-chart span {
@@ -66,7 +67,7 @@
   width: 100% !important;
   height: 100% !important;
 }
-.content-pie-chart button {
+/* .content-pie-chart button {
   display: flex;
   align-items: center;
   padding: 8px 12px;
@@ -84,7 +85,7 @@
 
   color: rgba(255, 153, 60, 1);
   font-size: 24px;
-}
+} */
 .pie-chart-infor .item {
   display: flex;
   align-items: center;

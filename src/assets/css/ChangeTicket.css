@@ -1,5 +1,7 @@
 .change-ticket {
   position: relative;
+
+  display: flex;
   width: calc(100% - 300px);
   left: 300px;
 }
@@ -7,6 +9,27 @@
   padding: 24px;
   margin-top: 20px;
   border-radius: 24px;
+  min-height: 100vh;
+
+  background: white;
+}
+.change-ticket-content .btn-change {
+  margin-left: 10px;
+  border: 1px solid #ff993c;
+  padding: 10px 12px;
+  border-radius: 8px;
+
+  background: #ff993c;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 18px;
+}
+.filter-ticket-content{
+  padding: 24px;
+  margin-top: 20px;
+  margin-left: 24px;
+  border-radius: 24px;
+  min-height: 100vh;
 
   background: white;
 }

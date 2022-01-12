@@ -38,11 +38,10 @@ header {
 .header-right ul li {
   display: flex;
   align-items: center;
+  gap: 24px;
 }
 .header-right ul li i {
-  width: 24px;
-  height: 24px;
-
+  font-size: 24px;
   color: #756a64;
 }
 .header-right ul li img {

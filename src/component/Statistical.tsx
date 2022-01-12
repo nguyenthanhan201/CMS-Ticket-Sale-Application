@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../assets/css/Statistical.css";
-import ButtonDatePicker from "./ButtonDatePicker";
+import DatePiker from "./ButtonDatePicker";
 import LineChart from "./LineChart";
 import PieChart from "./PieChart";
-// import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 export default function Statistical(): JSX.Element {
   const labels = ["Vé đã sử dùng", "Vé chưa sử dụng"];
+
+  var effectColors = {
+    highlight: "rgba(255, 255, 255, 0.75)",
+    shadow: "rgba(0, 0, 0, 0.5)",
+    glow: "rgb(255, 255, 0)",
+  };
 
   const options: any = {
     plugins: {
@@ -25,10 +30,16 @@ export default function Statistical(): JSX.Element {
           font: "Montserrat",
         },
         padding: 12,
-        hoverInnerGlowWidth: 20,
-        hoverInnerGlowColor: "rgba(146,151,164,.5)",
-        hoverOuterGlowWidth: 20,
-        hoverOuterGlowColor: "rgba(127,133,151,1)",
+        // textShadowBlur: 1,
+        // textShadowColor: "black",
+        // shadowOffsetX: 3,
+        // shadowOffsetY: 3,
+        // shadowBlur: 10,
+        // shadowColor: effectColors.shadow,
+        // hoverInnerGlowWidth: 20,
+        // hoverInnerGlowColor: "rgba(146,151,164,.5)",
+        // hoverOuterGlowWidth: 20,
+        // hoverOuterGlowColor: "rgba(127,133,151,1)",
       },
       title: {
         display: true,
@@ -76,10 +87,6 @@ export default function Statistical(): JSX.Element {
         color: "black",
       },
     ],
-    shadowOffsetX: 5,
-    shadowOffsetY: 5,
-    shadowBlur: [5, 10, 15, 20, 25, 30, 0],
-    // shadowColor: effectColors.shadows,
   };
 
   const options2: any = {
@@ -133,6 +140,48 @@ export default function Statistical(): JSX.Element {
     ],
   };
 
+  const [state, setState] = useState({
+    dayStart: {
+      activeDate: 0,
+      activeMonth: 0,
+      activeYear: 0,
+    },
+    dayEnd: {
+      activeDate: 0,
+      activeMonth: 0,
+      activeYear: 0,
+    },
+    tinhTrang: 1,
+    checkIn: ["c1"],
+  });
+  useEffect(() => {
+    const d = new Date();
+    setState({
+      ...state,
+      dayStart: {
+        activeDate: d.getDate(),
+        activeMonth: d.getMonth(),
+        activeYear: d.getFullYear(),
+      },
+      dayEnd: {
+        activeDate: d.getDate(),
+        activeMonth: d.getMonth() + 1 > 11 ? 0 : d.getMonth() + 1,
+        activeYear:
+          d.getMonth() + 1 > 11 ? d.getFullYear() + 1 : d.getFullYear(),
+      },
+    });
+  }, []);
+  const setDayStart = (date: any, month: any, year: any) => {
+    setState({
+      ...state,
+      dayStart: {
+        activeDate: date,
+        activeMonth: month,
+        activeYear: year,
+      },
+    });
+  };
+
   return (
     <div className="statistical">
       <div className="statistical-content">
@@ -140,18 +189,24 @@ export default function Statistical(): JSX.Element {
         <div className="line-chart">
           <div className="top-line-chart">
             <h4>Doanh thu</h4>
-            <ButtonDatePicker />
+            <DatePiker
+              activeDate={state.dayStart}
+              setActiveDate={setDayStart}
+            />
           </div>
           <LineChart />
         </div>
         <div className="pie-chart">
           <div className="top-pie-chart">
             <p>Tổng doanh thu theo tuần</p>
-            <h1>525.145.000</h1>
+            <h1 className="top-pie-chart-title">525.145.000</h1>
             <span>đồng</span>
           </div>
           <div className="content-pie-chart">
-            {/* <ButtonDatePicker /> */}
+            <DatePiker
+              activeDate={state.dayStart}
+              setActiveDate={setDayStart}
+            />
             <div className="wrapper-pie-chart">
               <PieChart data_add={data} option={options} />
             </div>
