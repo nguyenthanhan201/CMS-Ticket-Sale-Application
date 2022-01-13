@@ -12,6 +12,7 @@
 }
 .statistical-content h1 {
   font-size: 36px;
+  font-weight: bold;
 }
 .line-chart h4 {
   margin: 0;
@@ -59,33 +60,11 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  /* grid-template-columns: 150px 300px 300px 300px; */
-  /* grid-template-columns: repeat(4, 150px); */
-  /* grid-template-columns: auto auto auto auto; */
 }
 .content-pie-chart canvas{
   width: 100% !important;
   height: 100% !important;
 }
-/* .content-pie-chart button {
-  display: flex;
-  align-items: center;
-  padding: 8px 12px;
-  border: 1px solid #e6e0e0;
-  border-radius: 4px;
-  box-sizing: border-box;
-  height: 40px;
-
-  font-size: 14px;
-  color: rgba(30, 13, 3, 1);
-  background: rgba(255, 255, 255, 1);
-}
-.content-pie-chart button span i {
-  margin-left: 10px;
-
-  color: rgba(255, 153, 60, 1);
-  font-size: 24px;
-} */
 .pie-chart-infor .item {
   display: flex;
   align-items: center;

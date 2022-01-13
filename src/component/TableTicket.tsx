@@ -1,9 +1,11 @@
-import { Table, Tag } from "antd";
+import Icon from "@ant-design/icons";
+import { Table } from "antd";
 import "antd/dist/antd.css";
 import React from "react";
+import { PlusCircleTwoTone, MinusCircleTwoTone } from "@ant-design/icons";
 import "../assets/css/TableTicket.css";
 
-export default function TableTicket({dataSource, columns}: any) {
+export default function TableTicket({ dataSource, columns }: any) {
   // const columns: any = [
   //   {
   //     title: "STT",
@@ -253,7 +255,8 @@ export default function TableTicket({dataSource, columns}: any) {
           pageSize: 12,
           itemRender: itemRender,
         }}
-      />
+      >
+      </Table>
     </div>
   );
 }

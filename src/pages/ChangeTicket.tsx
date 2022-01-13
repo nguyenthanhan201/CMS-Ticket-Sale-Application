@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../assets/css/ChangeTicket.css";
+import Buttion from "../component/Button";
 import Button from "../component/Button";
 import DatePiker from "../component/ButtonDatePicker";
 import TableTicket from "../component/TableTicket";
@@ -250,6 +251,7 @@ export default function ChangeTicket() {
           <div className="top-control-left">
             <form action="">
               <input type="text" placeholder="Tìm bằng số vé" />
+              <i className="fas fa-search"></i>
             </form>
           </div>
           <div className="top-control-right">
@@ -263,54 +265,61 @@ export default function ChangeTicket() {
       <div className="filter-ticket-content">
         <h1>Lọc vé</h1>
         <table>
-          <tr>
-            <td style={{ verticalAlign: "top" }}>Tình trạng đổi soát</td>
-            <td>
-              <table>
-                <tr>
-                  <td>
-                    <input type="radio" name="filter"/>
-                  </td>
-                  <td>Tất cả</td>
-                </tr>
-                <tr>
-                  <td>
-                    <input type="radio" name="filter"/>
-                  </td>
-                  <td>Đã đổi soát</td>
-                </tr>
-                <tr>
-                  <td>
-                    <input type="radio" name="filter"/>
-                  </td>
-                  <td>Chưa đổi soát</td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td>Loại vé</td>
-            <td>Vé cổng</td>
-          </tr>
-          <tr>
-            <td>Từ ngày</td>
-            <td>
-              <DatePiker
-                activeDate={state.dayStart}
-                setActiveDate={setDayStart}
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>Đến ngày</td>
-            <td>
-              <DatePiker
-                activeDate={state.dayStart}
-                setActiveDate={setDayStart}
-              />
-            </td>
-          </tr>
+          <tbody>
+            <tr>
+              <td style={{ verticalAlign: "top" }}>Tình trạng đổi soát</td>
+              <td>
+                <table className="child-table">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <input type="radio" name="filter" defaultChecked/>
+                      </td>
+                      <td>Tất cả</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="radio" name="filter" />
+                      </td>
+                      <td>Đã đổi soát</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="radio" name="filter" />
+                      </td>
+                      <td>Chưa đổi soát</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>Loại vé</td>
+              <td>Vé cổng</td>
+            </tr>
+            <tr>
+              <td>Từ ngày</td>
+              <td>
+                <DatePiker
+                  activeDate={state.dayStart}
+                  setActiveDate={setDayStart}
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Đến ngày</td>
+              <td>
+                <DatePiker
+                  activeDate={state.dayStart}
+                  setActiveDate={setDayStart}
+                />
+              </td>
+            </tr>
+          </tbody>
         </table>
+        <Button class="btn-filter">
+          Lọc
+        </Button>
       </div>
     </div>
   );

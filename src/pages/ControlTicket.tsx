@@ -1,8 +1,9 @@
 import { Tag } from "antd";
-import React from "react";
+import React, { useState } from "react";
 import "../assets/css/ControlTicket.css";
 import Button from "../component/Button";
 import TableTicket from "../component/TableTicket";
+import ModalFilter from "../component/ModalFilter";
 
 export default function ControlTicket() {
   const columns: any = [
@@ -82,6 +83,18 @@ export default function ControlTicket() {
       key: "address",
       fixed: "left",
       responsive: ["sm"],
+    },
+    {
+      title: "",
+      dataIndex: "update",
+      key: "update",
+      fixed: "left",
+      responsive: ["sm"],
+      render: () => (
+        <div className="btn-edit">
+          &#8285; 
+        </div>
+      ),
     },
   ];
 
@@ -204,7 +217,22 @@ export default function ControlTicket() {
       coCheckIn: "Cổng 1",
     },
   ];
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
   return (
+    <>
     <div className="control-ticket">
       <div className="control-ticket-content">
         <h1>Danh sách vé</h1>
@@ -216,7 +244,7 @@ export default function ControlTicket() {
             </form>
           </div>
           <div className="top-control-right">
-            <Button class="btn-filter">
+            <Button class="btn-filter" onClick={showModal}>
               <svg
                 width="24"
                 height="24"
@@ -242,5 +270,7 @@ export default function ControlTicket() {
         <TableTicket dataSource={data} columns={columns} />
       </div>
     </div>
+    <ModalFilter isModalVisible={isModalVisible} handleOk={handleOk} handleCancel={handleCancel}/>
+    </>
   );
 }

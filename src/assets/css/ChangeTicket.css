@@ -13,6 +13,16 @@
 
   background: white;
 }
+.change-ticket-content .top-control .top-control-left form{
+  display: flex;
+  align-items: center;
+}
+.change-ticket-content h1,.filter-ticket-content h1{
+  width: 100%;
+
+  font-size: 36px;
+  font-weight: bold;  
+}
 .change-ticket-content .btn-change {
   margin-left: 10px;
   border: 1px solid #ff993c;
@@ -25,6 +35,9 @@
   font-size: 18px;
 }
 .filter-ticket-content{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
   padding: 24px;
   margin-top: 20px;
   margin-left: 24px;
@@ -32,4 +45,40 @@
   min-height: 100vh;
 
   background: white;
+}
+.filter-ticket-content table{
+  font-size: 16px;
+  font-weight: 600  ;
+  color: #4b3d36;
+}
+.filter-ticket-content table tbody tr td{
+  padding-bottom: 24px;
+  padding-right: 24px;
+}
+.filter-ticket-content table.child-table tbody tr td{
+  padding: 0;
+}
+.filter-ticket-content table.child-table tbody tr td input[type='radio']{
+  margin-right: 8px;
+}
+.filter-ticket-content .date-piker button{
+  border-radius: 8px;
+  border: none;
+
+  background: #E0E0E0;
+  color: #A5A8B1;
+}
+.filter-ticket-content tr:nth-child(4) .date-piker button{
+  background: #F7F8FB;
+}
+.filter-ticket-content .date-piker button svg path{
+  filter: grayscale(1);
+}
+.filter-ticket-content tr:nth-child(4) .date-piker button svg path{
+  filter: none;
+}
+.filter-ticket-content .btn-filter{
+  padding: 11px 63px;
+  border-radius: 8px;
+  cursor: pointer;
 }

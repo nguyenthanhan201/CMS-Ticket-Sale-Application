@@ -13,6 +13,7 @@
 }
 .control-ticket-content h1 {
   font-size: 36px;
+  font-weight: bold;
 }
 .top-control {
   display: flex;
@@ -41,11 +42,28 @@
   margin-left: 10px;
   border: 1px solid #ff993c;
   padding: 10px 12px;
+  border-radius: 8px;
 
   background: #ffffff;
   color: #ff993c;
   font-weight: bold;
   font-size: 18px;
+}
+.btn-edit{
+  font-size: 24px;
+}
+.ant-table-tbody tr:hover{
+  background: black;
+}
+tr:hover>.btn-edit{
+  display: none;
+}
+.btn-edit{
+  opacity: 0;
+  cursor: pointer;
+}
+td:hover .btn-edit{
+  opacity: 1;
 }
 .top-control {
   margin-bottom: 30px;
