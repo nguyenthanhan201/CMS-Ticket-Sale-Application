@@ -24,8 +24,7 @@ const DatePiker = (props: any) => {
       day: dt.getDay(),
     });
   }, []);
-  //======================================================
-  //===================================================
+
   // sự kện nút button nhấn next hoặc prev
   const monthPrevNext = (boolean: boolean) => {
     const { month, year } = state;
@@ -43,9 +42,7 @@ const DatePiker = (props: any) => {
       });
     }
   };
-  //===========================================================
-  //===========================================================
-  //===========================================================
+
   // băt sự kiên chọn ngày và xét lai ngày hiện tại
   const handleClick = (e: TypeDay) => {
     const { number, monthSate } = e;
@@ -79,16 +76,12 @@ const DatePiker = (props: any) => {
 
     setShow(false);
   };
-  //=========================================================
+
   // hàm nút radio
-  //====================================================
   const [valueRadio, setValueRadio] = useState(1);
   const onChange = (e: any) => {
     setValueRadio(e.target.value);
   };
-  ///================================================
-  ///================================================
-  ///================================================
 
   return (
     <div className="date-piker">

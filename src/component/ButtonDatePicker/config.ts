@@ -2,9 +2,7 @@ import { TypeActive, TypeSate } from "./types";
 
 export const tableTitle = ["T2", "T3", "T4", "T5", "T6", "T7", "CN"];
 
-//=============================================================
-//=============================================================
-//== hàm lấy tháng và nam trả về sô ngày trong tháng
+// hàm lấy tháng và năm trả về sô ngày trong tháng
 
 export const dataMonth = (month: number, year: number) => {
   const isCheck = (year: number) => {
@@ -35,9 +33,7 @@ export const dataMonth = (month: number, year: number) => {
   }
 };
 
-//=============================================================
-//=============================================================
-//== hàm thêm ngày vào mang thứ
+// hàm thêm ngày vào mang thứ
 
 export const arrayMonth = (state: TypeSate, active: TypeActive) => {
   let i = 1,
@@ -50,9 +46,8 @@ export const arrayMonth = (state: TypeSate, active: TypeActive) => {
     cn = [];
   const { month, year, date } = state;
   const { activeMonth, activeYear, activeDate } = active;
-  //==================================================
-  //========================= thêm ngày thang hien tại vào thứ=========================
-  //==================================================
+
+  // thêm ngày tháng hiện tại vào thứ
 
   const soDate = dataMonth(month, year);
   for (i = 1; i <= soDate; i++) {
@@ -108,10 +103,7 @@ export const arrayMonth = (state: TypeSate, active: TypeActive) => {
     }
   }
 
-  //================================================
-  //======================thêm ngày thang trước hien tại vào thứ==========================
-  //================================================
-
+  // thêm ngày ttháng trước hiện tại vào thứ
   let mothPrev = month - 1 < 0 ? 11 : month - 1;
   let yearPrev = month - 1 < 0 ? year - 1 : year;
   const dataMonthPrev = dataMonth(mothPrev, yearPrev);
@@ -162,9 +154,7 @@ export const arrayMonth = (state: TypeSate, active: TypeActive) => {
       }
     }
   }
-  //============================================
-  //===================thêm ngày thang sau hien tại vào thứ=========================
-  //============================================
+  // thêm ngày tháng sau hiện tại vào thứ
   let mothNext = month + 1 > 11 ? 0 : month + 1;
   let yearNext = month + 1 > 11 ? year + 1 : year;
   const dNext = new Date(yearNext, mothNext, 1);

@@ -1,8 +1,7 @@
-// ==========================================================
+
 
 import { TypeRenderColumnTable, TypeRenderRowTable } from "./types";
 
-//==========================================================
 export const renderTitleTable = (tableTitle: Array<string>) => {
   let xhtml;
 
@@ -16,9 +15,7 @@ export const renderTitleTable = (tableTitle: Array<string>) => {
   }
   return xhtml;
 };
-//==========================================================
-//==========================render column table================================
-//==========================================================
+// render column table
 export const renderColumnTable: TypeRenderColumnTable = (
   week: any,
   handleClick: any
@@ -43,9 +40,7 @@ export const renderColumnTable: TypeRenderColumnTable = (
   }
   return xhtml;
 };
-//==========================================================
-//==========================render row table================================
-//==========================================================
+// render row table
 export const renderRowTable: TypeRenderRowTable = (
   weeks: any,
   handleClick: any,

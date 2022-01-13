@@ -5,15 +5,8 @@ import { arrayMonth } from "./config";
 import Table from "./Table";
 import { TypePropsTickDatePicker } from "./types";
 const TickDatePiker = (props: TypePropsTickDatePicker) => {
-  const {
-    state,
-    monthPrevNext,
-    handleClick,
-    active,
-    onChange,
-
-    valueRadio,
-  } = props;
+  const { state, monthPrevNext, handleClick, active, onChange, valueRadio } =
+    props;
 
   const [weeks, setWeeks] = useState(arrayMonth(state, active));
   useEffect(() => {
