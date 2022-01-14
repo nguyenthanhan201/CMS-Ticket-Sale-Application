@@ -32,7 +32,8 @@
   background: #ff993c;
   color: #FFFFFF;
   font-weight: bold;
-  font-size: 18px;
+  /* font-size: 18px; */
+  font-size: clamp(13px, 1.4vw, 16px);
 }
 .filter-ticket-content{
   display: flex;

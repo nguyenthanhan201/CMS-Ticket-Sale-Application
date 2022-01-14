@@ -1,0 +1,83 @@
+.ant-modal.modal-filter .ant-modal-content {
+  border-radius: 16px;
+}
+.ant-modal.modal-filter .ant-modal-content .ant-modal-close-x{
+  display: none;
+}
+.ant-modal.modal-filter .ant-modal-content .ant-modal-header {
+  padding-top: 24px;
+  border-radius: 16px 16px 0 0;
+  border: none;
+}
+.ant-modal.modal-filter .ant-modal-content .ant-modal-header .ant-modal-title {
+  text-align: center;
+  font-size: 24px;
+  color: #1e0d03;
+  font-weight: bold;
+}
+.ant-modal-body table tr.filter-date td:nth-child(2) {
+  padding-left: 112px;
+}
+.ant-modal-body table tr.filter-date button{
+  border-radius: 8px;
+  border: 1px solid #A5A8B1;
+}
+.ant-modal-body table tr .txt {
+  font-size: 16px;
+  font-weight: 600;
+  color: #61554f;
+}
+.ant-modal-body .filter-state {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.ant-modal-body .filter-state .filter-state-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #61554f;
+}
+.ant-modal-body .filter-state .filter-state-list-radio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ant-modal-body .filter-state .filter-state-list-radio .item input {
+  margin-right: 8px;
+
+  transform: scale(1.6);
+}
+.ant-modal-body .filter-state .filter-state-list-radio .item span {
+  color: #61554f;
+  font-weight: 500;
+  font-size: 16px;
+}
+.ant-modal-body .filter-port .filter-port-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #61554f;
+}
+.ant-modal-body .filter-port .filter-port-list-check {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.ant-modal-body .filter-port .filter-port-list-check .item {
+  min-width: 33%;
+  margin-bottom: 14px;
+}
+.ant-modal-body .filter-port .filter-port-list-check .item label {
+  margin-left: 8px;
+
+  color: #61554f;
+  font-weight: 500;
+  font-size: 16px;
+}
+.ant-modal-body .btn-filter{
+  position: relative;
+  left: 48%;
+
+  padding: 11px 63px;
+
+  transform: translate(-50%, 0%);
+}

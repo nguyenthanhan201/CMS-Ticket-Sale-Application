@@ -22,7 +22,7 @@
   font-weight: bold;
   font-size: 18px;
 }
-.setting-content .ant-table-wrapper{
+.ant-table-wrapper{
   overflow-y: auto;
   overflow-x: auto;
 }

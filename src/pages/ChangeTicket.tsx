@@ -256,7 +256,7 @@ export default function ChangeTicket() {
           </div>
           <div className="top-control-right">
             <Button class="btn-change">
-              <span>Chốt đổi soát</span>
+              Chốt đổi soát
             </Button>
           </div>
         </div>

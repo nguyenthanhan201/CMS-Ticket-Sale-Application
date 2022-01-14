@@ -1,0 +1,31 @@
+.container-input-checkbox{
+  display: flex;
+  align-items: center;
+}
+.container-input-checkbox input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 24px;
+  width: 24px;
+  background: #d5d5d5;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container-input-checkbox input[type="checkbox"]:after {
+  display: none;
+
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f00c";
+  font-size: 15px;
+  color: #ffffff;
+}
+.container-input-checkbox input[type="checkbox"]:checked {
+  background: #27aef9;
+}
+.container-input-checkbox input[type="checkbox"]:checked:after {
+  display: block;
+}
